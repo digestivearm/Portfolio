@@ -1,14 +1,6 @@
-import {
-  picture,
-  frontendIllustration,
-  backendIllustration,
-} from "../../assets/asset.js";
-import Card from "../../components/Card";
-import { redirect, useNavigate } from "react-router-dom";
+import { picture } from "../../assets/asset";
 
 export default function Hero() {
-  let navigate = useNavigate();
-
   return (
     <>
       <section className="h-dvh w-full md:mt-0">
@@ -35,7 +27,8 @@ export default function Hero() {
           </p>
           <a
             href={"mailto:shreyprajapati13@gmail.com"}
-            target="_black"
+            target="_blank"
+            rel="noreferrer"
             className="justify-centertext-normal flex items-center rounded-[8px] border-1 border-(--color-button-border) bg-(--color-button-primary) px-4 py-2 text-xs font-semibold text-(--color-button-text) transition-all hover:cursor-pointer hover:bg-(--color-button-hover) md:px-6 md:py-3 md:text-base"
           >
             Contact Now
@@ -54,7 +47,6 @@ export default function Hero() {
               />
             </svg>
           </a>
-          {/* </span> */}
         </div>
       </section>
     </>

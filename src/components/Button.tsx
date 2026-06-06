@@ -1,6 +1,13 @@
+import { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
-export default function Button({ className, children, onClickHandler }) {
+interface ButtonProps {
+  className?: string;
+  children: ReactNode;
+  onClickHandler?: () => void;
+}
+
+export default function Button({ className, children, onClickHandler }: ButtonProps) {
   return (
     <>
       <button

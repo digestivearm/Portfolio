@@ -1,4 +1,5 @@
 import resumePdf from "../assets/Resume_Shrey_Prajapati.pdf";
+
 export default function Footer() {
   return (
     <>

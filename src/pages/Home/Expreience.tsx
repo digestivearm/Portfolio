@@ -1,4 +1,3 @@
-import Techstack from "../../components/Techstack";
 import Card from "../../components/Card";
 
 export default function Expreience() {
@@ -6,13 +5,13 @@ export default function Expreience() {
     <>
       <section className="about py-8 w-full flex-col items-center justify-center gap-8 px-4 ">
         <div className="flex flex-col items-center justify-center gap-8 p-4 lg:gap-15 mb-10">
-             <h2 className="text-center text-4xl font-bold text-(--color-heading-primary) lg:text-5xl">
-            <span class="underline decoration-(--color-highlight) decoration-8 underline-offset-3">
+          <h2 className="text-center text-4xl font-bold text-(--color-heading-primary) lg:text-5xl">
+            <span className="underline decoration-(--color-highlight) decoration-8 underline-offset-3">
               Work Experience
             </span>
           </h2>
           <Card className={"h-full w-full space-y-4 lg:max-w-1/2"}>
-            <h3 class="text-2xl font-bold text-(--color-heading-secondary)">Backend Developer</h3>
+            <h3 className="text-2xl font-bold text-(--color-heading-secondary)">Backend Developer</h3>
             <div>
               <p className="max-w-[40ch] text-lg">L.D. College of Engineering</p>
               <p className="max-w-[40ch] text-lg">Feb’25-Present</p>
@@ -20,16 +19,16 @@ export default function Expreience() {
             <p className="max-w-[40ch] text-lg lg:max-w-none">
               I’ve been working as a backend developer for the college student
               portal, collaborating with a team to design and implement system
-              architecture. <br /> 
+              architecture. <br />
               ◦ Developed APIs to for efficient exchange of data
               between frontend and backend. <br />
               ◦ Ensured scalability, security, and
               seamless integration with the frontend for a smooth user
               experience
             </p>
-              <a
+            <a
               href="https://github.com/LDCE-STUDENT-PORTAL-LATEST"
-              class="inline-flex items-center rounded-lg border-[1.5px] border-solid border-(--color-button-border) bg-(--color-button-primary) px-3 py-2 text-center text-sm font-medium text-(--color-button-text) hover:bg-(--color-button-hover) focus:ring-4 focus:ring-blue-300 focus:outline-none"
+              className="inline-flex items-center rounded-lg border-[1.5px] border-solid border-(--color-button-border) bg-(--color-button-primary) px-3 py-2 text-center text-sm font-medium text-(--color-button-text) hover:bg-(--color-button-hover) focus:ring-4 focus:ring-blue-300 focus:outline-none"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +44,6 @@ export default function Expreience() {
             </a>
           </Card>
         </div>
-
       </section>
     </>
   );
