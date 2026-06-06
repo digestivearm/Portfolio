@@ -1,18 +1,17 @@
-import Button from "../../components/Button.jsx";
-import Card from "../../components/ProjectCard.jsx";
+import Button from "../../components/Button";
+import Card from "../../components/ProjectCard";
 import { useNavigate } from "react-router-dom";
-import { projectDetails } from "../../utils/utils.js";
-
+import { projectDetails } from "../../utils/utils";
 
 export default function Projects() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <>
       <section className=" w-full py-8  md:px-4  flex items-center justify-center ">
         <div className="w-10/12 flex items-center justify-center lg:gap-15 flex-col md:w-11/12">
           <h2 className="mb-8 text-center text-4xl font-bold text-(--color-heading-primary) lg:text-5xl">
-            <span class="underline decoration-(--color-highlight) decoration-8 underline-offset-3">
+            <span className="underline decoration-(--color-highlight) decoration-8 underline-offset-3">
               Projects
             </span>
           </h2>

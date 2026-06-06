@@ -4,9 +4,18 @@ import {
   weatherAppMockup,
   spaceshipGameMockupImage,
   quickBiteMockupImage,
-} from "../assets/asset.js";
+} from "../assets/asset";
 
-export const projectDetails = [
+export interface ProjectDetail {
+  title: string;
+  image: string;
+  url: string;
+  tags: string[];
+  description: string;
+  github: string;
+}
+
+export const projectDetails: ProjectDetail[] = [
   {
     title: "Tile Maste Game",
     image: tileMasterMockUpImage,
@@ -52,8 +61,25 @@ export const projectDetails = [
   },
 ];
 
-export const colorVarients = ["Default", "Black", "Purple"];
-export const themeVarients = {
+export const colorVarients = ["Default", "Black", "Purple"] as const;
+export type ColorVariant = typeof colorVarients[number];
+
+export interface ThemeStyle {
+  primaryBackground: string;
+  secondaryBackground: string;
+  primaryFont: string;
+  secondaryFont: string;
+  buttonPrimary: string;
+  buttonHover: string;
+  buttonActive?: string;
+  buttonBorder: string;
+  cardPrimary: string;
+  cardBorder: string;
+  buttonText: string;
+  colorHighlight: string;
+}
+
+export const themeVarients: Record<ColorVariant, ThemeStyle> = {
   Default: {
     primaryBackground: "#0f0c29",
     secondaryBackground: "#0f0c29",
@@ -92,13 +118,12 @@ export const themeVarients = {
     buttonBorder: "#7149bc",
     cardPrimary: "#251233",
     cardBorder: "rgb(139, 114, 214)",
-    colorHighlight: "oklch(62.3% 0.214 259.815)",
-    buttonText: "#ffffff",
     colorHighlight: "oklch(79.5% 0.184 86.047)",
+    buttonText: "#ffffff",
   },
 };
 
-export function changeThemeColor(themeColor) {
+export function changeThemeColor(themeColor: ColorVariant) {
   const selectedTheme = themeVarients[themeColor];
   const documentObject = document.documentElement;
   documentObject.style.setProperty(
@@ -127,7 +152,7 @@ export function changeThemeColor(themeColor) {
   );
   documentObject.style.setProperty(
     "--color-button-border",
-    selectedTheme.buttonActive,
+    selectedTheme.buttonActive ?? "",
   );
   documentObject.style.setProperty(
     "--color-card-primary",
@@ -141,7 +166,6 @@ export function changeThemeColor(themeColor) {
     "--color-card-border",
     selectedTheme.cardBorder,
   );
-
   documentObject.style.setProperty(
     "--color-button-text",
     selectedTheme.buttonText,

@@ -1,14 +1,19 @@
 import { twMerge } from "tailwind-merge";
-import { nameLogo, mailLogo } from "../assets/asset.js";
+import { nameLogo, mailLogo } from "../assets/asset";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   themeVarients,
   colorVarients,
   changeThemeColor,
-} from "../utils/utils.js";
+  ColorVariant,
+} from "../utils/utils";
 
-export default function Navbar({ className }) {
+interface NavbarProps {
+  className?: string;
+}
+
+export default function Navbar({ className }: NavbarProps) {
   const [themeSelectMenuVisible, setThemeSelectMenuVisible] = useState(false);
 
   return (
@@ -33,10 +38,11 @@ export default function Navbar({ className }) {
                 : "hidden"
             }
           >
-            {colorVarients.map((color) => {
+            {colorVarients.map((color: ColorVariant) => {
               const selectedTheme = themeVarients[color];
               return (
                 <button
+                  key={color}
                   className="flex items-center justify-between gap-3 rounded-md bg-[#2c2c2c] p-1 text-(--color-font-primary) hover:cursor-pointer active:bg-[#c9c9c9]"
                   onClick={() => {
                     changeThemeColor(color);
